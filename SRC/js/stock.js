@@ -60,7 +60,7 @@ function fnStockEditCheck() {
 		return;
 	}
 
-	//if (!fnYMDCheck("正しい内見日付", form.visitDT)) { return; }
+	if (!fnYMDCheck("正しい内見日付", form.visitDT)) { return; }
 
 	tmp = form.deskPrice.value;
 	if (tmp.length > 5 || tmp.match(/[^0-9]+/)) {
