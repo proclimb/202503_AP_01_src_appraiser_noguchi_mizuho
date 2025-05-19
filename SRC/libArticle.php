@@ -58,9 +58,9 @@ function subArticle()
 				</tr>
 				<tr>
 					<th>物件名</th>
-					<td><input type="text" name="sArticle" value="<?php print $sRoom ?>" size="50" /></td>
+					<td><input type="text" name="sArticle" value="<?php print $sRooms ?>" size="50" /></td>
 					<th>キーBox番号</th>
-					<td><input type="text" name="sKeyBox" value="<?php print $sKeyBox ?>" size="30" /></td>
+					<td><input type="text" name="sKeyBox" value="<?php print $sKagPlace ?>" size="30" /></td>
 				</tr>
 				<tr>
 					<th>部屋番号</th>
@@ -122,14 +122,14 @@ function subArticle()
 				$sellCharge  = $row["SELLCHARGE"];
 			?>
 				<tr>
-					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='articleEdit';form.articleNo.value=<?php print $articleNo ?>;form.submit();"><?php print $article ?></a></td>
+					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='articleEdit';form.articleNo.value='<?php print $rrticleNo ?>';form.submit();"><?php print $article ?></a></td>
 					<td class="list_td<?php print $i ?>"><?php print $room ?></td>
+					<td class="list_td<?php print $i ?>"><?php print $drawing ?></td>
 					<td class="list_td<?php print $i ?>"><?php print $keyPlace ?></td>
 					<td class="list_td<?php print $i ?>"><?php print $articleNote ?></td>
-					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='fManager';form.sName.value='<?php print $article ?>';form.sRoom.value='<?php print $room ?>';form.submit();">表示</a></td>
-					<td class="list_td<?php print $i ?>"><?php print $keyBox ?></td>
-					<td class="list_td<?php print $i ?>"><?php print $drawing ?></td>
+					<td class="list_td<?php print $i ?>"><?php print $room ?></td>
 					<td class="list_td<?php print $i ?>"><?php print $sellCharge ?></td>
+					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='stock';form.sName.value='<?php print $article ?>';form.sRoom.value='<?php print $room ?>';form.submit();">表示</a></td>
 				</tr>
 			<?php
 				$i = ($i + 1) % 3;
