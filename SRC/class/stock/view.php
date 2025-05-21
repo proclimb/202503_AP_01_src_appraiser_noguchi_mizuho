@@ -149,6 +149,7 @@ function subStockView($param)
 				</tr>
 				<?php
 				$sql  = fnSqlStockList(1, $param);
+				//var_dump($sql);
 				$res  = mysqli_query($param["conn"], $sql);
 				$i = 0;
 				while ($row = mysqli_fetch_array($res)) {
