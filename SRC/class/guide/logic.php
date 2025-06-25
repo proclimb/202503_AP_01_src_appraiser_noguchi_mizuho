@@ -8,7 +8,7 @@ function subGuide()
     $param = getGuideParam();
     if ($_REQUEST['act'] == 'guide') {
         // 案内日の開始日を1ヶ月前に設定
-        $param["sGuideDTFrom"] = date('Y/m/d', mktime(0, 0, 0, date('m') - 1, date('d'), date('Y') - 1));
+        $param["sGuideDTFrom"] = date('Y/m/d', mktime(0, 0, 0, date('m') - 1, date('d'), date('Y')));
     }
 
     if ($param["sDel"] == '') {
