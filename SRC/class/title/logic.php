@@ -179,20 +179,22 @@ function subFTitleDelete()
 
     $DocNo = $_REQUEST['DocNo'];
 
-    if ($_REQUEST['seqNo'] == -1) {
+    if ($_REQUEST['seqNo'] == 0) {
         $sql = fnSqlFTitleRepetition($_REQUEST['classNo']);
         $res = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_array($res)) {
             $sql = fnSqlFTitleDelete($row['DOCNO']);
             //$result = mysqil_query($conn, $sql);
+            $_REQUEST['act'] = 'fTitleSearch';
+            subFTitle();
         }
     } else {
         $sql = fnSqlFTitleDelete($DocNo);
         $res = mysqli_query($conn, $sql);
-    }
+        $_REQUEST['act'] = 'fTitleItemSearch';
 
-    $_REQUEST['act'] = 'fTitleSearch';
-    subFTitle();
+        subFTitleItem();
+    }
 }
 
 //

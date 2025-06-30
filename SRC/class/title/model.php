@@ -63,7 +63,7 @@ function fnSqlFTitleInsert($param)
     $sql .= "DocNo,classNo,seqNo,name,INSDT,UPDT,DEL";
     $sql .= ")VALUES(";
     $sql .= "'" . $param["DocNo"] . "','" . $param["classNo"] . "','" . $param["seqNo"] . "','" . $param["name"] . "',"
-                . "CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,1)";
+        . "CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,1)";
 
     return $sql;
 }
