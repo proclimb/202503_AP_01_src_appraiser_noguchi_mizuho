@@ -8,7 +8,7 @@ function subFTitle()
     $param = getFTitleParam();
 
     if ($param["sDel"] == '') {
-        $param["sDel"] = 1;
+        $param["sDel"] = -1;
     }
 
     if (! $param["orderBy"]) {
@@ -179,12 +179,12 @@ function subFTitleDelete()
 
     $DocNo = $_REQUEST['DocNo'];
 
-    if ($_REQUEST['seqNo'] == 0) {
+    if ($_REQUEST['seqNo'] == -1) {
         $sql = fnSqlFTitleRepetition($_REQUEST['classNo']);
         $res = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_array($res)) {
             $sql = fnSqlFTitleDelete($row['DOCNO']);
-            $result = mysqil_query($conn, $sql);
+            //$result = mysqil_query($conn, $sql);
         }
     } else {
         $sql = fnSqlFTitleDelete($DocNo);
