@@ -4,6 +4,8 @@
 //
 function subAdminUser()
 {
+	//var_dump($_REQUEST['act']);
+	//var_dump($_REQUEST['password']);
 	$conn = fnDbConnect();
 
 	subMenu();
@@ -148,7 +150,7 @@ function subAdminUserEditComplete()
 		$sql = fnSqlAdminUserInsert(fnNextNo('USER'), $name, $id, $password, $authority);
 		$res = mysqli_query($conn, $sql);
 	}
-
+	var_dump($_REQUEST['password']);
 	$_REQUEST['act'] = 'adminUser';
 	subAdminUser();
 }
